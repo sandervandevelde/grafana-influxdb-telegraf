@@ -44,7 +44,6 @@ sudo nano influx.yaml (see influx.yaml file)
 sudo kubectl apply -f influx.yaml --namespace=nsinfluxdb
 
 sudo kubectl get all --namespace=nsinfluxdb
-
 ``` 
 
 Once deployed, the influxdb website is available at http://192.168.2.196:8086.
