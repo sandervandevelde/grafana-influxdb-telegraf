@@ -96,3 +96,4 @@ The telegraf agent has no website UI in this case.
 
 A complete explanation and walk-through on how to use this TIG stack is available in this [blog post](https://sandervandevelde.wordpress.com/2025/05/29/azure-iot-operations-local-dashboard-based-on-tig-stack/).
 
+![image](https://github.com/user-attachments/assets/bfa3812c-bda7-4782-8b46-48490d90e1bc)
