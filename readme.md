@@ -1,5 +1,7 @@
 # Kubectl templates for combining Grafana, InfluxDB v2, and Telegraf 
 
+Deploy the TIG stack on Kubernetes!
+
 Template Kubectl yaml files to read MQTT messages from an MQTT broker and show a chart in Grafana from InfluxDB v2.
 
 The Kubectl yaml files are part of this repo.
