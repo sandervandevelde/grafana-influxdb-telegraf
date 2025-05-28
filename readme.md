@@ -6,11 +6,11 @@ Template Kubectl yaml files to read MQTT messages from an MQTT broker and show a
 
 The Kubectl yaml files are part of this repo.
 
-Note that Telegraf needs an InfluxDB API token.
+Notice that both Telegraf and Grafana need an InfluxDB API token to set up a connection.
 
 ## Grafana
 
-Steps to roll out Grafana as Kubernetes pod:
+Steps to roll out Grafana as a Kubernetes pod:
 
 ```
 sudo kubectl delete namespace nsgrafana
@@ -32,7 +32,7 @@ Once deployed, the Grafana website is available at http://192.168.2.196:3000.
 
 ## InfluxDB v2
 
-Steps to roll out InfluxDB v2 as Kubernetes pod:
+Steps to roll out InfluxDB v2 as a Kubernetes pod:
 
 ```
 sudo kubectl delete namespace nsinfluxdb
@@ -55,11 +55,11 @@ Once deployed, the influxdb website is available at http://192.168.2.196:8086.
 * fill in a bucket (I used 'telemetry')
 * WARNING: Remember the admin token shown here on the page. It will not be shown again! 
 * Chose 'configure later' so we have a clean influxdb
-* create an API token for the Telegraf agent so it can connect to the InfluxDB
+* Create an API token for the Telegraf agent so it can connect to the InfluxDB
 
 ## Telegraf
 
-Steps to roll out Telegraf as Kubernetes pod:
+Steps to roll out Telegraf as a Kubernetes pod:
 
 ```
 sudo kubectl delete namespace nstelegraf
@@ -91,4 +91,8 @@ The telegraf agent has no website UI in this case.
   json_time_format = "2006-01-02T15:04:05.999999999Z"
   json_timezone = "UTC"
 ```
+
+## Blog post
+
+A complete explanation and walk-through on how to use this TIG stack is available in this [blog post](https://sandervandevelde.wordpress.com/2025/05/29/azure-iot-operations-local-dashboard-based-on-tig-stack/).
 
