@@ -1,0 +1,111 @@
+
+Grafana
+=======
+
+sudo kubectl delete namespace nsgrafana
+
+sudo kubectl create namespace nsgrafana
+
+touch grafana.yaml
+
+sudo nano grafana.yaml
+
+``````````````````````````````````````
+see grafana.yaml file
+``````````````````````````````````````
+
+sudo kubectl apply -f grafana.yaml --namespace=nsgrafana
+
+sudo kubectl get all --namespace=nsgrafana
+
+//Grafana website: 
+http://192.168.2.196:3000
+
+van admin | admin naar admin | [standard password for the uno os]
+
+
+
+
+
+-----------------------------------------------------------------------------------
+
+
+InfluxDB on Kubernetes
+======================
+
+
+sudo kubectl delete namespace nsinfluxdb
+
+sudo kubectl create namespace nsinfluxdb
+
+sudo touch influx.yaml
+
+sudo nano influx.yaml
+
+````````````````````````````````````````````````````````````````````
+see influx.yaml file
+``````````````````````````````````````````````````````````````````````````````````
+
+sudo kubectl apply -f influx.yaml --namespace=nsinfluxdb
+
+sudo kubectl get all --namespace=nsinfluxdb
+	
+//influxdb website: 192.168.2.196:8086
+	
+user: admin
+ww: [standaard ww]
+org: iotedger
+bucket: telemetry
+
+remember admin token:
+
+
+chose configure later so we have a clean influxdb
+
+
+
+
+
+
+TELEGRAF
+========
+
+
+sudo kubectl delete namespace nstelegraf
+
+sudo kubectl create namespace nstelegraf
+
+
+touch telegraf.yaml
+
+sudo nano telegraf.yaml
+
+``````````````````````````````````````
+see telegraf.yaml file
+
+
+``````````````````````````````````````
+
+sudo kubectl apply -f telegraf.yaml --namespace=nstelegraf
+
+
+sudo kubectl describe pods --namespace=nstelegraf
+
+
+
+drop telegraf.conf in the right folder
+
+````````````````````````````````````````
+see telegraf.conf file
+````````````````````````````````````````
+
+
+// todo: turn public ip address into local ip address
+
+// todo: tokens on disk instead of hardcoded
+
+// todo: alternative timestamp value from body via inputs.mqtt_consumer.json_v2
+  json_time_format = "2006-01-02T15:04:05.999999999Z"
+  json_timezone = "UTC"
+
+
